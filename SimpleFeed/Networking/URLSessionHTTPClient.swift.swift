@@ -61,6 +61,8 @@ class URLSessionHTTPClient: HTTPClient {
     private func components(for url: URL, parameters: RequestParameters?) throws -> URLComponents? {
         var components = URLComponents(url: url, resolvingAgainstBaseURL: false)
         switch parameters {
+        case .none:
+            break
         case .query(let items):
             components?.queryItems = items.map { URLQueryItem(name: $0, value: $1) }
         default:
@@ -72,8 +74,10 @@ class URLSessionHTTPClient: HTTPClient {
     
     private func bodyData(for parameters: RequestParameters?) throws -> Data? {
         switch parameters {
+        case .none:
+            return nil
         case .body:
-            parameters?.rawData
+            return parameters?.rawData
         default:
             throw Error.invalidParameters
         }

@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		9BF068D02B7E5BC6006989A9 /* SimpleFeedApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF068CF2B7E5BC6006989A9 /* SimpleFeedApp.swift */; };
-		9BF068D22B7E5BC6006989A9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF068D12B7E5BC6006989A9 /* ContentView.swift */; };
+		9BF068D22B7E5BC6006989A9 /* FeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF068D12B7E5BC6006989A9 /* FeedView.swift */; };
 		9BF068D42B7E5BC8006989A9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9BF068D32B7E5BC8006989A9 /* Assets.xcassets */; };
 		9BF068D72B7E5BC8006989A9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9BF068D62B7E5BC8006989A9 /* Preview Assets.xcassets */; };
 		9BF068ED2B7E600A006989A9 /* URLSessionHTTPClient.swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF068EA2B7E600A006989A9 /* URLSessionHTTPClient.swift.swift */; };
@@ -22,12 +22,13 @@
 		9BF069022B7E60D4006989A9 /* GetPostsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF069002B7E60D4006989A9 /* GetPostsUseCase.swift */; };
 		9BF069032B7E60D4006989A9 /* GetPostUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF069012B7E60D4006989A9 /* GetPostUseCase.swift */; };
 		9BF069052B7E61F6006989A9 /* GetPostCommentsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF069042B7E61F6006989A9 /* GetPostCommentsUseCase.swift */; };
+		9BF069072B7E8F5E006989A9 /* FeedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF069062B7E8F5E006989A9 /* FeedViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		9BF068CC2B7E5BC6006989A9 /* SimpleFeed.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleFeed.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BF068CF2B7E5BC6006989A9 /* SimpleFeedApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleFeedApp.swift; sourceTree = "<group>"; };
-		9BF068D12B7E5BC6006989A9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		9BF068D12B7E5BC6006989A9 /* FeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedView.swift; sourceTree = "<group>"; };
 		9BF068D32B7E5BC8006989A9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9BF068D62B7E5BC8006989A9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		9BF068EA2B7E600A006989A9 /* URLSessionHTTPClient.swift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLSessionHTTPClient.swift.swift; sourceTree = "<group>"; };
@@ -41,6 +42,8 @@
 		9BF069002B7E60D4006989A9 /* GetPostsUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetPostsUseCase.swift; sourceTree = "<group>"; };
 		9BF069012B7E60D4006989A9 /* GetPostUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetPostUseCase.swift; sourceTree = "<group>"; };
 		9BF069042B7E61F6006989A9 /* GetPostCommentsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPostCommentsUseCase.swift; sourceTree = "<group>"; };
+		9BF069062B7E8F5E006989A9 /* FeedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewModel.swift; sourceTree = "<group>"; };
+		9BF069082B7E96DF006989A9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +95,7 @@
 		9BF068E42B7E5F57006989A9 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				9BF069082B7E96DF006989A9 /* Info.plist */,
 				9BF068D52B7E5BC8006989A9 /* Preview Content */,
 				9BF068D32B7E5BC8006989A9 /* Assets.xcassets */,
 			);
@@ -109,7 +113,8 @@
 		9BF068E62B7E5F83006989A9 /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				9BF068D12B7E5BC6006989A9 /* ContentView.swift */,
+				9BF068D12B7E5BC6006989A9 /* FeedView.swift */,
+				9BF069062B7E8F5E006989A9 /* FeedViewModel.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -250,10 +255,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9BF069072B7E8F5E006989A9 /* FeedViewModel.swift in Sources */,
 				9BF068ED2B7E600A006989A9 /* URLSessionHTTPClient.swift.swift in Sources */,
 				9BF068F52B7E60A5006989A9 /* PostService.swift in Sources */,
 				9BF069032B7E60D4006989A9 /* GetPostUseCase.swift in Sources */,
-				9BF068D22B7E5BC6006989A9 /* ContentView.swift in Sources */,
+				9BF068D22B7E5BC6006989A9 /* FeedView.swift in Sources */,
 				9BF068F92B7E60AD006989A9 /* PostRequest.swift in Sources */,
 				9BF069052B7E61F6006989A9 /* GetPostCommentsUseCase.swift in Sources */,
 				9BF068EF2B7E600A006989A9 /* Request.swift in Sources */,
@@ -399,6 +405,7 @@
 				DEVELOPMENT_TEAM = 4WTNTYVFXP;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SimpleFeed/Helpers/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -428,6 +435,7 @@
 				DEVELOPMENT_TEAM = 4WTNTYVFXP;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SimpleFeed/Helpers/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
